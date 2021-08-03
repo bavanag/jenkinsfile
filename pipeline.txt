@@ -1,0 +1,28 @@
+#jenkinsfile
+pipeline{
+    agent any{
+        stages{
+            stage('One'){
+                steps{
+                    echo 'welcome bavana'
+                }    
+            }
+            stage('Two'){
+                steps{
+                    input('do u want to proceed?')
+                }
+            }
+            stage('Three'){
+                when{
+                      not{ branch "master"}
+                    }
+                steps{
+                    echo 'welcome'
+                }
+
+                }
+
+            }
+        }
+    }
+}
